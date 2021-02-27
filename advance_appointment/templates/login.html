@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block body %}
+<body>
+    <form action='' method="POST" >
+        {% csrf_token %}
+      <div class="centered">
+        <div class="box">
+            <div class="form-signin">
+              <h5 text-align="center"> Login to continue</h5>
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+              <input type="text" name="username" placeholder="Username"style="text-align: center;"><br>
+              <i class="fa fa-key" aria-hidden="true"></i>
+              <input type="password" name="Password" placeholder="Password" style="text-align: center;"><br><div><h5>  </h5></div>
+              <button type="submit" class="btn-primary" align="center">Login</button><br>
+              </form>
+              <div class="err-message"> 
+                {% for message in messages %}
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <p>{{message}}</p>
+                {% endfor %}
+              </div>
+            </div>      
+      </div>
+    </div>
+
+</body>
+
+{% endblock %}
