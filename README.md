@@ -3,7 +3,6 @@
 
 Tech stack used:
 
-| First Header  | Second Header |
 | ------------- | ------------- |
 | Frontend      | HTML,CSS      |
 | Backend       | Django        |
