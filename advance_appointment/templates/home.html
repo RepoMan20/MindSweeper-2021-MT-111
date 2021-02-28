@@ -1,10 +1,145 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-thi is home
-{% endblock %}
-{% block body %}
-for patients
-Current appointments
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<div class="centered">
+<section class="hero is-primary is-medium">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+      <h1>XYZ Hospital</h1>
+    </a>
 
-{% endblock %}
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+      <a class="navbar-item">
+        About us
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body" style="margin-top: -160px;">
+
+	<section class="section">
+  <h1 class="title">Leading in Healthcare with the latest technologies
+    </h1>
+
+  <h2 class="subtitle">    Get expert medical care and facilities, <strong>Book an appointment now   </strong>
+  </h2>
+	</section>
+	<form class="box" style="width: 300px;margin-left: 25%;
+    margin-right:25%;
+    width: 50%;" method="post">
+		 {% csrf_token %}
+	  <div class="field">
+	    <label class="label">Patient Name</label>
+	    <div class="control">
+	      <input class="input" id="name_patient" placeholder="e.g. John Doe">
+	    </div>
+	    <br/>
+	    <label class="label">E-mail</label>
+	    <div class="control">
+	      <input class="input" id="email" placeholder="e.g. example@abc.com">
+	    </div>
+	    <br/>
+	    <label class="label">Contact number</label>
+	    <div class="control">
+	      <input class="input" placeholder="e.g. +91-9769887789">
+	    </div>
+	    <br/>
+	    <label class="label">Gender</label>
+	    <div class="select is-rounded">
+		  <select class="is-focused" id="gender">
+		  	<option> Male </option>
+		    <option> Female </option>
+		  </select>
+		</div>
+		<br/>
+		<br/>
+	    <label class="label">Any Serious illnesses *</label>
+	    <div class="select is-rounded">
+		  <select class="is-focused">
+		  	<option> None </option>
+		    <option>Acute Bronchitis</option>
+		    <option>Ischemic heart disease</option>
+		    <option>Stroke</option>
+		    <option>Diabetes mellitus</option>
+		    <option> Alzheimer’s</option>
+		  </select>
+		</div>
+		<br/>
+		<br/>
+	    <label class="label">Allergies</label>
+	    <div class="field">
+		 	<input class="input" placeholder="e.g. Tree Nut allergy">
+		</div>
+		<br/>
+		<label class="label">Select Doctor *</label>
+	    <div class="select is-rounded">
+		  <select class="is-focused">
+		  	<option> Dr. John Doe </option>
+		    <option> Dr.Keerti Patel </option>
+		    <option>Dr. Joe </option>
+		  </select>
+		</div>
+		<br/>
+		<br/>
+	    <label class="label">Select a date for appointment</label>
+		<div class="field">
+			<input type="datetime-local" id="datetime"/>
+		</div>
+		<br/>
+		<button type="submit" class="button is-info is-outlined" onclick="showHide()">Submit</button>
+	</form>
+</div>
+
+</section>
+</div>

@@ -5,27 +5,21 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="{% url 'home' %}">
-                    Fast Appointment | {{user.username}}
+                    Patient Dashboard
                 </a>
-                
-            </li>
-            <br>
-            <br>
-            <li>
-                <a href="{% url 'home' %}">Dashboard</a>
             </li>
             <li>
-              <a href="#">Make an New Appointment</a>
+              <a href="{% url 'doctor_dash' %}">For Doctors</a>
+            </li>
+            <li>
+                <a href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+              <a href="#">Contact us</a>
+            </li>
+            <li>
+              <a href="{% url 'patient_form' %}">Make an New Appointment</a>
           </li>
-            <li>
-                <a href="{% url 'login' %}">Login</a>
-            </li>
-            <li>
-                <a href="#"></a>
-            </li>
-            <li>
-                <a href="{%  url 'logout' %}">Logout</a>
-            </li>
         </ul>
     </div>
   

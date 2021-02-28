@@ -1,7 +1,14 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User , auth
+from django.contrib import messages
 # Create your views here.
 def home(request):
+    if request.method == 'POST':
+        name_patient = request.POST['name_patient']
+        email = request.POST['email']
+        gender = request.POST['gender']
+
+        x = Patients_appointment_Details(name_patient=name_patient,email=email,gender=gender)
     return render(request,'home.html')
 
 
@@ -31,3 +38,9 @@ def logout(request):
     
     auth.logout(request)
     return redirect('home')
+
+def patient_form(request):
+    return render(request, 'patient_form.html')
+
+def doctor_dash(request):
+    return render(request,'doctor_dash.html')
