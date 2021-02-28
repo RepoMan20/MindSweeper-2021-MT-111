@@ -1,9 +1,11 @@
 # MindSweeper-2021-MT-111
 # Website for Advanced Appointment system
 
-#Screenshots
+# Screenshots
 
 ![Home page](./images/s1.jpg?raw=true "Title")
+![Form](./images/s2.jpg?raw=true "Title")
+
 
 
 | Stack         | Frameworks used|
